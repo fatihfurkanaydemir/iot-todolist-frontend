@@ -18,13 +18,6 @@ const ToDoElement = (props) => {
 
   return (
     <figure className={classes['todo-element']}>
-      <button
-        type="button"
-        onClick={props.onDelete.bind(null, props.id)}
-        className={`${classes['todo--button']} ${classes['todo--button__delete']} `}
-      >
-        <TrashIcon />
-      </button>
       <div className={classes['todo--content']}>
         <p className={`${classes['todo--text']} ${textCompletedClasses} `}>
           {props.text}
@@ -36,13 +29,22 @@ const ToDoElement = (props) => {
           </p>
         )}
       </div>
-      <button
-        type="button"
-        onClick={props.onMark.bind(null, props.id)}
-        className={`${classes['todo--button']} ${markButtonClasses} `}
-      >
-        {props.isCompleted ? <CompletedIcon /> : <CheckIcon />}
-      </button>
+      <div className={classes['todo--buttons']}>
+        <button
+          type="button"
+          onClick={props.onDelete.bind(null, props.id)}
+          className={`${classes['todo--button']} ${classes['todo--button__delete']} `}
+        >
+          <TrashIcon />
+        </button>
+        <button
+          type="button"
+          onClick={props.onMark.bind(null, props.id)}
+          className={`${classes['todo--button']} ${markButtonClasses} `}
+        >
+          {props.isCompleted ? <CompletedIcon /> : <CheckIcon />}
+        </button>
+      </div>
     </figure>
   );
 };

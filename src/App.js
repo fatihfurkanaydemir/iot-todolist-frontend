@@ -5,6 +5,8 @@ import AddToDo from './components/AddToDo/AddToDo';
 import MainContainer from './components/MainContainer/MainContainer';
 import ToDoList from './components/ToDoList/ToDoList';
 
+const API = 'http://raspberrypi.local/api/v1/todos';
+
 function App() {
   const [todoList, setTodoList] = useState([]);
 
@@ -12,7 +14,7 @@ function App() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:80/api/v1/todos');
+        const response = await fetch(API);
         if (!response.ok) throw new Error('An error occured');
 
         const todos = (await response.json()).map((todo) => ({
@@ -31,7 +33,7 @@ function App() {
 
   const addTodoHandler = async (todo) => {
     try {
-      const response = await fetch('http://127.0.0.1:80/api/v1/todos', {
+      const response = await fetch(API, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -42,7 +44,6 @@ function App() {
       if (!response.ok) throw new Error('ToDo could not be added');
 
       const returnedTodo = await response.json();
-      console.log(returnedTodo);
 
       setTodoList((list) => [...list, returnedTodo]);
     } catch (error) {
@@ -52,7 +53,7 @@ function App() {
 
   const deleteTodoHandler = async (id) => {
     try {
-      const response = await fetch('http://127.0.0.1:80/api/v1/todos', {
+      const response = await fetch(API, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -70,7 +71,7 @@ function App() {
 
   const markTodoHandler = async (id) => {
     try {
-      const response = await fetch('http://127.0.0.1:80/api/v1/todos', {
+      const response = await fetch(API, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

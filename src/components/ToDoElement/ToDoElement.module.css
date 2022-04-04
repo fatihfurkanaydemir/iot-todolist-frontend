@@ -1,29 +1,29 @@
 .todo-element {
   width: 100%;
   background-color: #fff;
-
-  display: flex;
-  justify-content: center;
 }
 
 .todo--content {
-  padding: 1rem 3.6rem;
+  padding: 2rem 3.6rem;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
   flex-grow: 1;
+
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
 }
 
 .todo--text {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   width: 100%;
 
   word-break: break-all;
 }
 
 .todo--duedate {
-  font-size: 1.3rem;
+  font-size: 2.3rem;
   font-weight: 300;
 }
 
@@ -31,9 +31,14 @@
   text-decoration: line-through;
 }
 
+.todo--buttons {
+  display: flex;
+}
+
 .todo--button {
   border: none;
-  width: 4rem;
+  padding: 0.8rem 0rem;
+  flex-grow: 1;
   flex-shrink: 0;
   cursor: pointer;
 
@@ -54,14 +59,12 @@
 .todo--button__delete {
   margin-right: auto;
   background-color: #e63946;
-  border-top-left-radius: 9px;
   border-bottom-left-radius: 9px;
 }
 
 .todo--button__mark-completed {
   margin-left: auto;
   background-color: #6ede8a;
-  border-top-right-radius: 9px;
   border-bottom-right-radius: 9px;
 }
 
@@ -76,4 +79,19 @@
   width: 30px;
   height: 30px;
   fill: #333;
+}
+
+@media only screen and (max-width: 48em) {
+  .todo--icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .todo--duedate {
+    font-size: 2rem;
+  }
+
+  .todo--text {
+    font-size: 2.2rem;
+  }
 }

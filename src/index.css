@@ -4,6 +4,8 @@
   padding: 0;
   margin: 0;
   box-sizing: inherit;
+
+  font-size: 62.5%;
 }
 
 body {
@@ -13,6 +15,21 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  font-size: 62.5%;
   box-sizing: border-box;
+}
+
+@media only screen and (max-width: 48em) {
+  *,
+  *::after,
+  *::before {
+    font-size: 56.25%;
+  }
+}
+
+@media only screen and (max-width: 25em) {
+  *,
+  *::after,
+  *::before {
+    font-size: 50%;
+  }
 }

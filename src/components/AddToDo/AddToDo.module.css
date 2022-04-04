@@ -23,9 +23,9 @@
   outline: none;
   border: none;
   box-shadow: 0 0 0px 2px rgb(202, 202, 202);
-  padding: 1rem 1.2rem;
+  padding: 1.5rem 2rem;
   border-radius: 12px;
-  font-size: 1.2rem;
+  font-size: 2.2rem;
 }
 
 .addtodo--text:focus {
@@ -33,25 +33,25 @@
 }
 
 .addtodo--label {
-  margin-top: 1rem;
-  margin-bottom: 0.4rem;
-  font-size: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 300;
 }
 
 .addtodo--duedate {
   outline: none;
   border: none;
-  /* border: 2px solid #aaa; */
   box-shadow: 0 0 0px 2px rgb(202, 202, 202);
-  padding: 0.5rem;
+  padding: 1.2rem;
   border-radius: 12px;
-  font-size: 1rem;
+  font-size: 1.8rem;
   width: 40%;
 }
 
 .addtodo--button {
   border: none;
-  width: 4rem;
+  width: 5rem;
   flex-shrink: 0;
   cursor: pointer;
 
@@ -79,4 +79,39 @@
   height: 30px;
   stroke-width: 50;
   stroke: #333;
+}
+
+@media only screen and (max-width: 48em) {
+  .addtodo--icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .addtodo--duedate {
+    font-size: 1.6rem;
+  }
+
+  .addtodo--label {
+    font-size: 1.6rem;
+  }
+
+  .addtodo--text {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 32em) {
+  .addtodo--duedate {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 25em) {
+  .addtodo--duedate {
+    font-size: 1.8rem;
+  }
+
+  .addtodo--label {
+    font-size: 1.8rem;
+  }
 }

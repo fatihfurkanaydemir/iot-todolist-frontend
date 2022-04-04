@@ -2,13 +2,25 @@
   box-shadow: 0 2rem 6rem 0.5rem rgb(97 85 81 / 20%);
   border-radius: 9px;
   background-color: #fff;
-  height: 94vh;
-  padding: 2rem 0rem;
-
+  height: 96vh;
   width: 85vw;
+  padding: 2rem 0rem;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2.4rem;
+}
+
+@media only screen and (max-width: 48em) {
+  .main-container {
+    width: 95vw;
+  }
+}
+
+@media only screen and (max-width: 32em) {
+  .main-container {
+    height: 98vh;
+    width: 97vw;
+  }
 }
